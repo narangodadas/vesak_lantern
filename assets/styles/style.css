@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a5f1a, #0a2a0a);
+    color: #ffefc0;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px gold;
+}
+
+h2, h3 {
+    color: #ffdd99;
+}
+
+button {
+    background: #ffaa33;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #ffcc55;
+}
+
+.qr-card {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+}
+
+.instructions {
+    background: rgba(0,0,0,0.5);
+    text-align: left;
+}

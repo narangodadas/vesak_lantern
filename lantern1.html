@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Lantern 1 - Neon Modern</title>
+    <!-- Include A-Frame and AR.js -->
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <style>
+        body { margin: 0; overflow: hidden; font-family: sans-serif; }
+        .info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            pointer-events: none;
+            z-index: 10;
+            font-size: 14px;
+        }
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff8c00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            z-index: 20;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <a class="back-btn" href="index.html">← Back</a>
+    <div class="info">🌀 Modern Neon Lantern | Walk around to see 360° view</div>
+
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+        <!-- Marker (Hiro) - place the printed marker in real world -->
+        <a-marker preset="hiro">
+            <!-- Modern Neon Lantern: A glowing, colorful structure -->
+            <a-entity position="0 0 0" rotation="0 0 0">
+                <!-- Main body: glowing cylinder -->
+                <a-cylinder radius="0.6" height="1.2" color="#ff00cc" metalness="0.9" roughness="0.2" emissive="#ff00cc" emissive-intensity="0.8">
+                    <a-animation attribute="material.emissive-intensity" from="0.5" to="1.2" dur="1500" repeat="indefinite" direction="alternate"></a-animation>
+                </a-cylinder>
+                
+                <!-- Neon rings around -->
+                <a-torus radius="0.65" radius-tubular="0.05" color="#00ffff" emissive="#00ffff" emissive-intensity="1" rotation="90 0 0" position="0 0.3 0">
+                    <a-animation attribute="rotation.z" from="0" to="360" dur="8000" repeat="indefinite"></a-animation>
+                </a-torus>
+                <a-torus radius="0.65" radius-tubular="0.05" color="#ff66ff" emissive="#ff66ff" emissive-intensity="1" rotation="90 0 0" position="0 -0.3 0">
+                    <a-animation attribute="rotation.z" from="360" to="0" dur="8000" repeat="indefinite"></a-animation>
+                </a-torus>
+
+                <!-- Top decorative dome -->
+                <a-sphere radius="0.3" color="#ffaa00" emissive="#ff4400" emissive-intensity="0.6" position="0 0.7 0"></a-sphere>
+                <!-- Bottom base -->
+                <a-cylinder radius="0.7" height="0.1" color="#cc00ff" position="0 -0.65 0"></a-cylinder>
+                
+                <!-- Floating particles around -->
+                <a-entity position="0 0 0">
+                    <a-sphere radius="0.08" color="#ff6600" position="0.5 0.2 0.5">
+                        <a-animation attribute="position" from="0.5 0.2 0.5" to="-0.5 0.2 -0.5" dur="3000" repeat="indefinite" direction="alternate"></a-animation>
+                    </a-sphere>
+                    <a-sphere radius="0.08" color="#00ffaa" position="-0.5 0.6 -0.3">
+                        <a-animation attribute="position" from="-0.5 0.6 -0.3" to="0.5 0.6 0.3" dur="4000" repeat="indefinite" direction="alternate"></a-animation>
+                    </a-sphere>
+                    <a-sphere radius="0.08" color="#ff00aa" position="0.3 -0.2 0.6">
+                        <a-animation attribute="position" from="0.3 -0.2 0.6" to="-0.3 -0.2 -0.6" dur="3500" repeat="indefinite" direction="alternate"></a-animation>
+                    </a-sphere>
+                </a-entity>
+            </a-entity>
+        </a-marker>
+
+        <!-- Static camera (handled by AR.js) -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>

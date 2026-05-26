@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Vesak AR Lanterns - Company Name</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <style>
+        .qr-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .qr-card {
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            padding: 1rem;
+            text-align: center;
+            width: 250px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .qr-card img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+        }
+        .instructions {
+            background: #fff8e7;
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin-top: 2rem;
+        }
+        .marker-img {
+            width: 150px;
+            border: 2px solid gold;
+            border-radius: 10px;
+        }
+        button {
+            background: #ff8c00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏮 Vesak AR Lantern Experience 🏮</h1>
+        <p>Scan QR code → Allow camera → Point at printed marker → Enjoy 3D lantern!</p>
+
+        <div class="qr-container">
+            <div class="qr-card">
+                <h3>🌀 Modern Neon Lantern</h3>
+                <!-- These are placeholder QR images. Generate actual QR codes pointing to your deployed URLs -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://your-domain.vercel.app/lantern1.html" alt="QR for Lantern 1">
+                <p>Scan to see Neon style</p>
+                <button onclick="window.open('lantern1.html', '_blank')">Preview AR</button>
+            </div>
+            <div class="qr-card">
+                <h3>🌸 Floral Fantasy Lantern</h3>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://your-domain.vercel.app/lantern2.html" alt="QR for Lantern 2">
+                <p>Scan to see Floral style</p>
+                <button onclick="window.open('lantern2.html', '_blank')">Preview AR</button>
+            </div>
+            <div class="qr-card">
+                <h3>🔺 Geometric Glow Lantern</h3>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://your-domain.vercel.app/lantern3.html" alt="QR for Lantern 3">
+                <p>Scan to see Geometric style</p>
+                <button onclick="window.open('lantern3.html', '_blank')">Preview AR</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📌 Setup Instructions for Competition Day</h2>
+            <p><strong>Step 1:</strong> Print this marker image and place it on a flat surface or hang on wall:</p>
+            <img src="https://raw.githubusercontent.com/AR-js-org/AR.js/master/data/images/HIRO.jpg" alt="Hiro Marker" class="marker-img">
+            <p><strong>Step 2:</strong> Generate real QR codes using any QR generator (replace "your-domain.vercel.app" with your actual Vercel URL).</p>
+            <p><strong>Step 3:</strong> Stick QR codes near the marker or on separate stands.</p>
+            <p><strong>Step 4:</strong> Users scan → allow camera → point at marker → enjoy 360° lantern view!</p>
+            <p>✨ <strong>Tip:</strong> Ensure good lighting for best AR tracking.</p>
+        </div>
+    </div>
+</body>
+</html>
